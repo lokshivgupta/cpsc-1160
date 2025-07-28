@@ -10,6 +10,7 @@ class sortedSet{
          sortedSet();  //Default Constructor
          ~sortedSet(); //destrcutor
          sortedSet(T arr[], unsigned int size); //parametrized constructor
+         sortedSet(const sortedSet<T>&); //copy constructor
          void reverseOrder();
          bool add(const T&);
          bool remove(T&);

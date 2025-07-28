@@ -24,7 +24,8 @@ public:
     bool removeMin(T&);
     bool removeMax(T&);
     //T* getData() const;
-    friend T* extractArray(const set<T>& t1);
+    template<typename U>
+    friend U* extractArray(const set<U>&);
 private:
     T* data; // pointer to the data
     unsigned int cap ; // maximum capacity for the array

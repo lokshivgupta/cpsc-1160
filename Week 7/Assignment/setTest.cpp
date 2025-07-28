@@ -82,12 +82,12 @@ int main(){
     return 0;
 }
 
-template<typename T>
-T* extractArray(const set<T>& t1){
-    T* data;
+template<typename U>
+U* extractArray(const set<U>& t1){
+    U* data;
     unsigned int size = t1.getSize();
     unsigned int cap = size + 10;
-    data = new T[cap];
+    data = new U[cap];
     for(unsigned int i = 0; i < size; i++){
       
         data[i] = t1.data[i];

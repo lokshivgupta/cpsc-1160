@@ -38,10 +38,6 @@ set<T>::~set(){
     delete [] data;
 }
 
-// template<typename T>
-// T* set<T>::getData()const{
-//     return data;
-// }
 template <typename T>
 void set<T>::resize(){
      if(size == cap){
@@ -134,7 +130,7 @@ set<T> set<T>:: symmetry(const set<T>& other) const{
     }
 }
     for(unsigned int i = 0; i < other.size; i++){
-        if(!(other.checkMembership(data[i]))){
+        if(!(this->checkMembership(other.data[i]))){
             result.add(other.data[i]);
         }
     }
@@ -203,7 +199,10 @@ bool  set<T>::removeMin(T& other){
         data[j] = data[j + 1];
     }
     --size;
-    resize();
+    if(cap - size > 10){
+        resize();
+    }
+    
     return true;
 
 }
@@ -225,6 +224,9 @@ bool set<T>::removeMax(T& other){
         data[j] = data[j + 1];
     }
     --size;
-    resize();
+    if(cap - size > 10){
+        resize();
+    }
+    
     return true;
 }
