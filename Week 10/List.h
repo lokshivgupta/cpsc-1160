@@ -84,7 +84,9 @@ public:
     --size;
     return valToReturn;
 }
-
+T removeVal(T value){
+    
+}
 
 private:
     Node<T> * head, * tail;
